@@ -50,46 +50,13 @@ class _SimpleHomePageState extends State<SimpleHomePage> {
     );
   }
 
-  void _openSimpleHomePage(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const SimpleHomePage(title: 'Home Page'),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(kToolbarHeight),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-          ), // kiri-kanan 16px
-          child: AppBar(
-            automaticallyImplyLeading: false, // biar nggak dobel leading
-            leading: IconButton(
-              icon: const Icon(Icons.home),
-              onPressed: () => Navigator.pop(context),
-            ),
-            title: Row(
-              children: [
-                CircleAvatar(
-                  backgroundImage: const AssetImage(
-                    'assets/images/profile.png',
-                  ),
-                  radius: 15,
-                ),
-                const SizedBox(width: 8),
-                const Text('username'),
-              ],
-            ),
-          ),
-        ),
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
       ),
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +69,7 @@ class _SimpleHomePageState extends State<SimpleHomePage> {
               height: 150,
             ),
 
-            const SizedBox(height: 50),
+            const SizedBox(height: 30),
 
             // Baris 1
             Row(
@@ -120,7 +87,8 @@ class _SimpleHomePageState extends State<SimpleHomePage> {
               ],
             ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 20), // jarak antar baris
+            // LATIHAN
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
