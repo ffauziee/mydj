@@ -69,7 +69,7 @@ class _SimpleHomePageState extends State<SimpleHomePage> {
               height: 150,
             ),
 
-            const SizedBox(height: 30),
+            const SizedBox(height: 50),
 
             // Baris 1
             Row(
